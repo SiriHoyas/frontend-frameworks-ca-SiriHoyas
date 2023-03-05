@@ -1,0 +1,13 @@
+.btn {
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.primary {
+  background-color: blueviolet;
+}
+
+.secondary {
+  background-color: goldenrod;
+}
