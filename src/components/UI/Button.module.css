@@ -1,11 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+
 .btn {
   padding: 1rem;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
+  font-family: "Jura", sans-serif;
+  font-size: 1em;
 }
 
 .primary {
   background-color: blueviolet;
+  color: white;
+}
+
+.primary:hover {
+  background-color: mediumspringgreen;
 }
 
 .secondary {
