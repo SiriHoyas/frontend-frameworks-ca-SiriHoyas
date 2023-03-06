@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
 
 .btn {
-  padding: 1rem;
+  padding: 0.6rem;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -10,12 +10,13 @@
 }
 
 .primary {
-  background-color: blueviolet;
+  background-color: #ff4848;
   color: white;
+  transition: all 200ms ease-in;
 }
 
 .primary:hover {
-  background-color: mediumspringgreen;
+  background-color: #c43b3b;
 }
 
 .secondary {

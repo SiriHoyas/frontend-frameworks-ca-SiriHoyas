@@ -1,0 +1,38 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 5px;
+}
+
+.productThumbnail {
+  height: 200px;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productDescriptionContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.productTitle {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.productPrice {
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: start;
+  padding: 1rem;
+}
