@@ -1,12 +1,16 @@
 .header {
-  background-color: darkcyan;
-  padding: 2rem;
+  background-color: #fefefe;
+  padding: 0.5rem 2rem;
+
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 8px 2px rgba(160, 160, 160, 0.245);
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
-  width: 30%;
+  justify-content: space-around;
+  width: 20%;
 }
 
 .link {
@@ -17,4 +21,8 @@
 
 .active {
   text-decoration: underline;
+}
+
+.logo {
+  width: 6rem;
 }

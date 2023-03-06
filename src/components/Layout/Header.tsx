@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
 import App from "../../App";
 import ContactPage from "../../pages/ContactPage";
+import Logo from "../UI/icons/Logo";
 import styles from "./Header.module.css";
 
 function Header() {
   return (
     <header className={styles.header}>
+      <Logo className={styles.logo} />
       <nav className={styles.nav}>
         <NavLink to={"/"} className={styles.link}>
           Home
