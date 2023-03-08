@@ -38,6 +38,7 @@ function ProductCard() {
       </div>
       <div className={styles.btnContainer}>
         <Button
+          path="products/:productID"
           className="primary"
           type="button"
           label="Show more"

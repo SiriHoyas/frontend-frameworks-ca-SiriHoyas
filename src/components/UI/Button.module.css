@@ -13,6 +13,8 @@
   background-color: #ff4848;
   color: white;
   transition: all 200ms ease-in;
+  color: #fefefe;
+  text-decoration: none;
 }
 
 .primary:hover {
