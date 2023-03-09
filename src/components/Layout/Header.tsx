@@ -8,6 +8,7 @@ import CartIcon from "../UI/icons/CartIcon";
 import Logo from "../UI/icons/Logo";
 import styles from "./Header.module.css";
 import { RootState } from "../../store/store";
+import SearchBar from "../SearchBar/SearchBar";
 
 function Header() {
   const { itemCount } = useSelector((store: RootState) => {
@@ -29,6 +30,9 @@ function Header() {
           Contact
         </NavLink>
       </nav>
+      <div>
+        <SearchBar />
+      </div>
       <Link to={"checkout"} className={styles.cartIconContainer}>
         <CartIcon className={styles.cartIcon} />
         <div className={styles.cartOverlay}>{itemCount}</div>

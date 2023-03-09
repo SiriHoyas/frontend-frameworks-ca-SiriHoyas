@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import styles from "./ProductCard.module.css";
 
-type Props = {
+export type ProductProps = {
   imageUrl: string;
   title: string;
   discountedPrice: number;
   id: string;
 };
 
-function ProductCard({ imageUrl, title, discountedPrice, id }: Props) {
+function ProductCard({ imageUrl, title, discountedPrice, id }: ProductProps) {
   return (
     <article className={styles.productCard} key={id}>
       <div className={styles.productThumbnail}>
