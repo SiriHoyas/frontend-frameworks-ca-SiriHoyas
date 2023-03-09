@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import useApi from "../../hooks/useApi";
 import styles from "./SearchBar.module.css";
 
+//ON BLUR
+
 function SearchBar() {
   const [value, setValue] = useState("");
   const [filteredData, setFilteredData] = useState([]);
