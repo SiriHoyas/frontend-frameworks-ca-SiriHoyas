@@ -1,5 +1,17 @@
+import { Link, useParams } from "react-router-dom";
+import useApi from "../hooks/UseApi";
+
 function ProductPage() {
-  return <h2>Product Page</h2>;
+  const { productID } = useParams<{ productID: string }>();
+
+  const { data } = useApi(`https://api.noroff.dev/api/v1/online-shop/${productID}`);
+  console.log(data);
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <img src={data.imageUrl} />
+    </div>
+  );
 }
 
 export default ProductPage;
