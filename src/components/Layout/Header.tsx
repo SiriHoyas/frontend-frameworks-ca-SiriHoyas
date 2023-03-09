@@ -15,8 +15,6 @@ function Header() {
     return store.cart;
   });
 
-  console.log(itemCount);
-
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>

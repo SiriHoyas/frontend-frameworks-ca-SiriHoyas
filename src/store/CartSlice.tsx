@@ -20,6 +20,4 @@ const cartSlice = createSlice({
   reducers: {},
 });
 
-console.log(cartSlice.getInitialState());
-
 export default cartSlice.reducer;

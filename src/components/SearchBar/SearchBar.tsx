@@ -16,9 +16,8 @@ function SearchBar() {
       return value.title.includes(searchWord);
     });
     setFilteredData(filtered);
-    console.log(filtered);
   };
-  console.log(value);
+
   return (
     <div>
       <div>
