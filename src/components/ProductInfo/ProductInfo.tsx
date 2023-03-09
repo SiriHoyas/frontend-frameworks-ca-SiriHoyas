@@ -1,6 +1,6 @@
-import { ProductProps } from "../ProductCard/ProductCard";
+import { Product } from "../Types";
 
-function ProductInfo({ title, imageUrl, discountedPrice }: ProductProps) {
+function ProductInfo({ title, imageUrl, discountedPrice }: Product) {
   return (
     <article>
       <h1>{title}</h1>

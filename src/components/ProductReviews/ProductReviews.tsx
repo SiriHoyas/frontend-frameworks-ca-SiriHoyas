@@ -1,12 +1,7 @@
+import { Review } from "../Types";
 import styles from "./ProductReviews.module.css";
 
-type Props = {
-  rating: number;
-  username: string;
-  description: string;
-};
-
-function ProductReviews({ rating, username, description }: Props) {
+function ProductReviews({ rating, username, description }: Review) {
   return (
     <article>
       <span>{rating}</span>

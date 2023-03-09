@@ -1,4 +1,4 @@
-import ProductCard, { ProductProps } from "../components/ProductCard/ProductCard";
+import ProductCard, { Product } from "../components/ProductCard/ProductCard";
 import useApi from "../hooks/useApi";
 import styles from "./HomePage.module.css";
 
@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <main className={styles.homepageMain}>
       <section className={styles.productsContainer}>
-        {data.map((product: ProductProps) => {
+        {data.map((product: Product) => {
           return <ProductCard imageUrl={product.imageUrl} title={product.title} discountedPrice={product.discountedPrice} key={product.id} id={product.id} />;
         })}
       </section>

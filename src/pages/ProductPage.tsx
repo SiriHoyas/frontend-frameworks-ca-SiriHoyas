@@ -1,22 +1,24 @@
 import { has } from "immer/dist/internal";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ProductProps } from "../components/ProductCard/ProductCard";
 import ProductInfo from "../components/ProductInfo/ProductInfo";
 import ProductReviews from "../components/ProductReviews/ProductReviews";
-import useApi from "../hooks/useApi";
+import { Product } from "../components/Types";
+import useApi, { ApiResponse } from "../hooks/useApi";
 
 function ProductPage() {
   const { productID } = useParams<{ productID: string }>();
-  const { data } = useApi(`https://api.noroff.dev/api/v1/online-shop/${productID}`);
+  const { data } = useApi<Product>(`https://api.noroff.dev/api/v1/online-shop/${productID}`);
   console.log(data);
 
-  const reviews = data?.reviews || [];
+  if (!data) return <p>Loading...</p>;
+
+  const reviews = data.reviews || [];
 
   return (
     <>
       <section>
-        <ProductInfo title={data.title} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} />
+        <ProductInfo title={data.title} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} />
       </section>
       <section>
         {reviews.length > 0 &&

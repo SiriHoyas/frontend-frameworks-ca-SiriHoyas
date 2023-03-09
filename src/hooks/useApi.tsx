@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
-function useApi(url: string) {
-  const [data, setData] = useState([]);
+export interface ApiResponse {
+  title: string;
+  imageUrl: string;
+  discountedPrice: number;
+  id: string;
+}
+
+function useApi<T>(url: string) {
+  const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
