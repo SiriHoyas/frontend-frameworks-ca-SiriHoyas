@@ -12,3 +12,10 @@ export type Review = {
   rating: number;
   description: string;
 };
+
+export type Inputs = {
+  fullName: string;
+  subject: string;
+  email: string;
+  body: string;
+};

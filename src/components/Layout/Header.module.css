@@ -1,65 +1,60 @@
-.header {
+.navbar {
   background-color: #fefefe;
-  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  padding: 0 1rem;
   display: flex;
+  height: 55px;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 8px 2px rgba(160, 160, 160, 0.245);
 }
 
-.nav {
+.iconsContainer {
   display: flex;
-  justify-content: center;
-  width: 33%;
+  align-items: center;
 }
 
-.link {
-  text-decoration: none;
-  margin-left: 2rem;
-  color: black;
-  font-size: 1.2rem;
+.navbarIcon {
+  font-size: 1.4rem;
+  color: rgb(15, 15, 15);
+  margin-left: 1rem;
 }
 
-.active {
-  text-decoration: underline;
-}
-
-.logoContainer {
-  width: 33%;
+.cartContainer {
   display: flex;
-  justify-content: start;
-}
-
-.logo {
-  width: 6rem;
-}
-
-.cartIconContainer {
-  width: 0.5rem;
-  cursor: pointer;
-  width: 33%;
-  display: flex;
-  justify-content: end;
-}
-
-.cartIcon {
-  width: 2.5rem;
+  align-items: center;
 }
 
 .cartOverlay {
-  color: #ff4848;
+  color: #010101;
   padding: 0.2rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   border-radius: 100%;
   width: 0.9rem;
   height: 0.9rem;
   text-align: center;
-  background-color: #fefefe;
-  font-weight: 600;
+  background-color: #ffffffef;
+  font-weight: 800;
   position: absolute;
-  transform: translate(6px, 30px);
+  transform: translate(25px, 5px);
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 2px 2px rgba(68, 68, 68, 0.245);
+}
+
+.searchOpenIcon {
+  font-size: 1.9rem;
+}
+
+.searchbar {
+  margin: 0 1rem;
+  padding: 0.3rem;
+}
+
+.navLinksContainer {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
 }

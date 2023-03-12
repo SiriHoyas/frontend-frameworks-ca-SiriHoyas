@@ -1,5 +1,12 @@
+import ContactForm from "../components/ContactForm/ContactForm";
+import styles from "./ContactPage.module.css";
+
 function Contact() {
-  return <h2>Contact</h2>;
+  return (
+    <main className={styles.main}>
+      <ContactForm />
+    </main>
+  );
 }
 
 export default Contact;
