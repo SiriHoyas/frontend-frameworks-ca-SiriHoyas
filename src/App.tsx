@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import Button from "./components/UI/Button";
 import Checkout from "./pages/CheckoutPage";
 import CheckoutSuccess from "./pages/CheckoutSuccessPage";
 import Contact from "./pages/ContactPage";

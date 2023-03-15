@@ -12,11 +12,14 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
+import { useMediaQuery } from "@react-hook/media-query";
 
 function Header() {
   const { itemCount } = useSelector((store: RootState) => {
     return store.cart;
   });
+
+  const isBiggerScreen = useMediaQuery("only screen and (min-width: 1024px)");
 
   const [navState, setNavState] = useState("initialState");
 
@@ -32,6 +35,28 @@ function Header() {
     setNavState("initialState");
   }
 
+  if (isBiggerScreen) {
+    return (
+      <header className={styles.navbar}>
+        <section className={styles.logoContainer}>LOGO</section>
+        <nav className={styles.navLinksContainer}>
+          <NavLink to={"/"}>Home</NavLink>
+          <NavLink to={"contact"}>Contact</NavLink>
+        </nav>
+        <section className={styles.iconsContainer}>
+          <AiOutlineSearch className={styles.navbarIcon} />
+          <input type="text" placeholder="search"></input>
+          <Link to={"checkout"}>
+            <div className={styles.cartContainer}>
+              <BsBag className={styles.navbarIcon} />
+              <p className={styles.cartOverlay}>{itemCount}</p>
+            </div>
+          </Link>
+        </section>
+      </header>
+    );
+  }
+
   if (navState === "searchOpen") {
     return (
       <header className={`${styles.navbar} ${styles.searchOpen}`}>
@@ -44,10 +69,10 @@ function Header() {
   if (navState === "menuOpen") {
     return (
       <header className={`${styles.navbar} ${styles.menuOpen}`}>
-        <div className={styles.navLinksContainer}>
+        <nav className={styles.navLinksContainer}>
           <NavLink to={"/"}>Home</NavLink>
           <NavLink to={"contact"}>Contact</NavLink>
-        </div>
+        </nav>
         <AiOutlineCloseCircle className={styles.menuOpenIcon} onClick={closeMenuOptions} />
       </header>
     );

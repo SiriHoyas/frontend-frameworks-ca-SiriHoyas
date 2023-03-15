@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@react-hook/media-query";
 import ProductCard from "../components/ProductCard/ProductCard";
 import SearchBar from "../components/SearchBar/SearchBar";
 import { Product } from "../components/Types";
