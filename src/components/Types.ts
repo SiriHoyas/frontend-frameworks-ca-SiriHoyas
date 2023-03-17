@@ -19,3 +19,10 @@ export type Inputs = {
   email: string;
   body: string;
 };
+
+export type cartState = {
+  cartItems: string[];
+  itemCount: number;
+  total: number;
+  isLoading: boolean;
+};

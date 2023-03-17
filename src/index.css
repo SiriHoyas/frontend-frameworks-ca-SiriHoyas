@@ -3,7 +3,12 @@
 body {
   margin: 0;
   font-family: "Jura", sans-serif;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
 }

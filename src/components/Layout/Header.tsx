@@ -1,21 +1,15 @@
-import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
-import App from "../../App";
-import ContactPage from "../../pages/ContactPage";
-import { cartState } from "../../store/CartSlice";
-import CartIcon from "../UI/icons/CartIcon";
-import Logo from "../UI/icons/Logo";
 import styles from "./Header.module.css";
 import { RootState } from "../../store/store";
-import SearchBar from "../SearchBar/SearchBar";
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
 import { useMediaQuery } from "@react-hook/media-query";
 
 function Header() {
-  const { itemCount } = useSelector((store: RootState) => {
+  let { itemCount, cartItems } = useSelector((store: RootState) => {
+    console.log(store.cart);
     return store.cart;
   });
 
@@ -45,7 +39,7 @@ function Header() {
         </nav>
         <section className={styles.iconsContainer}>
           <AiOutlineSearch className={styles.navbarIcon} />
-          <input type="text" placeholder="search"></input>
+          {/* <SearchBar /> */}
           <Link to={"checkout"}>
             <div className={styles.cartContainer}>
               <BsBag className={styles.navbarIcon} />
@@ -60,8 +54,7 @@ function Header() {
   if (navState === "searchOpen") {
     return (
       <header className={`${styles.navbar} ${styles.searchOpen}`}>
-        <AiOutlineSearch className={styles.searchOpenIcon} />
-        <input type="text" placeholder="search" className={styles.searchbar} />
+        {/* <SearchBar /> */}
         <AiOutlineCloseCircle className={styles.searchOpenIcon} onClick={closeMenuOptions} />
       </header>
     );

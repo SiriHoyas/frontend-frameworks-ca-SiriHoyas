@@ -1,15 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-export type cartState = {
-  cartItems: string[];
-  itemCount: number;
-  total: number;
-  isLoading: boolean;
-};
+import { cartState } from "../components/Types";
 
 const initialState: cartState = {
   cartItems: [],
-  itemCount: 22,
+  itemCount: 0,
   total: 0,
   isLoading: true,
 };
@@ -17,7 +11,14 @@ const initialState: cartState = {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-  reducers: {},
+  reducers: {
+    addToCart: (state: cartState, action) => {
+      state.cartItems = [...state.cartItems, action.payload];
+      state.total = state.total + action.payload.price;
+      state.itemCount = state.cartItems.length;
+    },
+  },
 });
 
+export const { addToCart } = cartSlice.actions;
 export default cartSlice.reducer;

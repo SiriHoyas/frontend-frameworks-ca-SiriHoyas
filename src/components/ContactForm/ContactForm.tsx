@@ -9,7 +9,11 @@ import { TextField } from "@mui/material";
 const schema = yup.object().shape({
   fullName: yup.string().min(3, "Please enter your full name").required(),
   subject: yup.string().min(3, "The subject must be three or more characters").required(),
-  email: yup.string().email().required(),
+  email: yup
+    .string()
+    .email()
+    .matches(/^([a-z0-9_\.\+-]+)@([\da-z-]+)(\.[a-z]{2,6})+$/, "Please enter a valid email")
+    .required(),
   body: yup.string().min(3, "Your message must be three or more characters").required(),
 });
 
