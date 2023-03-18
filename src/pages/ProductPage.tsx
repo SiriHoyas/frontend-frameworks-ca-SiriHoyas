@@ -1,14 +1,15 @@
-import { useMediaQuery } from "@react-hook/media-query";
-import { has } from "immer/dist/internal";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
-import ProductInfo from "../components/ProductInfo/ProductInfo";
-import ProductReviews from "../components/ProductReviews/ProductReviews";
-import { Product } from "../components/Types";
-import useApi, { ApiResponse } from "../hooks/useApi";
 import CartSlice, { addToCart } from "../store/CartSlice";
+import { Link, useParams } from "react-router-dom";
+import useApi, { ApiResponse } from "../hooks/useApi";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+
+import { Product } from "../components/Types";
+import ProductInfo from "../components/ProductInfo/Index";
+import ProductReviews from "../components/ProductReviews/Index";
 import { RootState } from "../store/store";
+import { has } from "immer/dist/internal";
+import { useMediaQuery } from "@react-hook/media-query";
 
 function ProductPage() {
   const { productID } = useParams<{ productID: string }>();
