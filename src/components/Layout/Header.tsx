@@ -8,8 +8,7 @@ import { BsBag } from "react-icons/bs";
 import { useMediaQuery } from "@react-hook/media-query";
 
 function Header() {
-  let { itemCount, cartItems } = useSelector((store: RootState) => {
-    console.log(store.cart);
+  const { itemCount, cartItems } = useSelector((store: RootState) => {
     return store.cart;
   });
 
@@ -43,7 +42,7 @@ function Header() {
           <Link to={"checkout"}>
             <div className={styles.cartContainer}>
               <BsBag className={styles.navbarIcon} />
-              <p className={styles.cartOverlay}>{itemCount}</p>
+              {}
             </div>
           </Link>
         </section>
