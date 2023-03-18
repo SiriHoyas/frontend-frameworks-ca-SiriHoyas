@@ -1,9 +1,9 @@
-import { useMediaQuery } from "@react-hook/media-query";
-import ProductCard from "../components/ProductCard/ProductCard";
-import SearchBar from "../components/SearchBar/SearchBar";
 import { Product } from "../components/Types";
-import useApi from "../hooks/useApi";
+import ProductCard from "../components/ProductCard/ProductCard";
+import SearchBar from "../components/SearchBar/Index";
 import styles from "./HomePage.module.css";
+import useApi from "../hooks/useApi";
+import { useMediaQuery } from "@react-hook/media-query";
 
 function HomePage() {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");

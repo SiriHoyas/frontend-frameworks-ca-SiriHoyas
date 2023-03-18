@@ -1,15 +1,16 @@
-import { useSelector } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
-import styles from "./Header.module.css";
-import { RootState } from "../../store/store";
-import { useState } from "react";
-import { AiOutlineMenu, AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import { Link, NavLink } from "react-router-dom";
+
 import { BsBag } from "react-icons/bs";
+import Logo from "../../UI/icons/Logo";
+import { RootState } from "../../../store/store";
+import styles from "./Header.module.css";
 import { useMediaQuery } from "@react-hook/media-query";
-import Logo from "../UI/icons/Logo";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 function Header() {
-  const { itemCount, cartItems } = useSelector((store: RootState) => {
+  const { itemCount } = useSelector((store: RootState) => {
     return store.cart;
   });
 
@@ -32,10 +33,16 @@ function Header() {
   if (isBiggerScreen) {
     return (
       <header className={styles.navbar}>
-        <section className={styles.logoContainer}>LOGO</section>
+        <section className={styles.logoContainer}>
+          <Logo className={styles.logo} />
+        </section>
         <nav className={styles.navLinksContainer}>
-          <NavLink to={"/"}>Home</NavLink>
-          <NavLink to={"contact"}>Contact</NavLink>
+          <NavLink to={"/"} className={styles.navLink}>
+            Home
+          </NavLink>
+          <NavLink to={"contact"} className={styles.navLink}>
+            Contact
+          </NavLink>
         </nav>
         <section className={styles.iconsContainer}>
           <AiOutlineSearch className={styles.navbarIcon} />
@@ -43,7 +50,7 @@ function Header() {
           <Link to={"checkout"}>
             <div className={styles.cartContainer}>
               <BsBag className={styles.navbarIcon} />
-              {}
+              <p className={styles.cartOverlay}>{itemCount}</p>
             </div>
           </Link>
         </section>

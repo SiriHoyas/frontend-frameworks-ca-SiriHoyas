@@ -1,10 +1,12 @@
-import styles from "./ContactForm.module.css";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Button from "../UI/Button";
+
+import { SubmitHandler, useForm } from "react-hook-form";
+
+import Button from "../UI/Button/Index";
 import { Inputs } from "../Types";
 import { TextField } from "@mui/material";
+import styles from "./ContactForm.module.css";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const schema = yup.object().shape({
   fullName: yup.string().min(3, "Please enter your full name").required(),

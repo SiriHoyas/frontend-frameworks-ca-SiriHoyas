@@ -1,6 +1,6 @@
+import Button from "../UI/Button/Index";
 import { Link } from "react-router-dom";
 import { Product } from "../Types";
-import Button from "../UI/Button";
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ imageUrl, title, discountedPrice, id }: Product) {
