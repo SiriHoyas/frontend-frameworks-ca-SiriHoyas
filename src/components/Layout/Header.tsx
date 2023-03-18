@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
 import { useMediaQuery } from "@react-hook/media-query";
+import Logo from "../UI/icons/Logo";
 
 function Header() {
   const { itemCount, cartItems } = useSelector((store: RootState) => {
@@ -62,8 +63,12 @@ function Header() {
     return (
       <header className={`${styles.navbar} ${styles.menuOpen}`}>
         <nav className={styles.navLinksContainer}>
-          <NavLink to={"/"}>Home</NavLink>
-          <NavLink to={"contact"}>Contact</NavLink>
+          <NavLink to={"/"} className={styles.navLink} onClick={closeMenuOptions}>
+            Home
+          </NavLink>
+          <NavLink to={"contact"} className={styles.navLink} onClick={closeMenuOptions}>
+            Contact
+          </NavLink>
         </nav>
         <AiOutlineCloseCircle className={styles.menuOpenIcon} onClick={closeMenuOptions} />
       </header>
@@ -72,7 +77,11 @@ function Header() {
 
   return (
     <header className={styles.navbar}>
-      <section className={styles.logoContainer}>LOGO</section>
+      <section className={styles.logoContainer}>
+        <Link to={"/"}>
+          <Logo className={styles.logo} />
+        </Link>
+      </section>
       <section className={styles.iconsContainer}>
         <AiOutlineSearch className={styles.navbarIcon} onClick={searchOpen} />
         <Link to={"checkout"}>

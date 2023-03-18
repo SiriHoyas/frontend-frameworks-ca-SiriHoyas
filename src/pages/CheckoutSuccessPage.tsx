@@ -1,5 +1,5 @@
 function CheckoutSuccess() {
-  return <h2>Checkout success</h2>;
+  return <main>Checkout success</main>;
 }
 
 export default CheckoutSuccess;

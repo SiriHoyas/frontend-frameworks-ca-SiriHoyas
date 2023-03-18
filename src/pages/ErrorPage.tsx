@@ -1,11 +1,7 @@
 import SearchBar from "../components/SearchBar/SearchBar";
 
 function Error() {
-  return (
-    <div>
-      <SearchBar />
-    </div>
-  );
+  return <main>ERROR</main>;
 }
 
 export default Error;

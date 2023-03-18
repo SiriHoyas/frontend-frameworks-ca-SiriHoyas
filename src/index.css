@@ -7,8 +7,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #f3f4f1;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 main {
   flex-grow: 1;
+  margin-top: 4rem;
 }

@@ -13,9 +13,6 @@ import { RootState } from "../store/store";
 function ProductPage() {
   const { productID } = useParams<{ productID: string }>();
   const { data } = useApi<Product>(`https://api.noroff.dev/api/v1/online-shop/${productID}`);
-  let { itemCount, cartItems, total } = useSelector((store: RootState) => {
-    return store.cart;
-  });
   const dispatch = useDispatch();
 
   if (!data) return <p>Loading...</p>;
@@ -36,7 +33,7 @@ function ProductPage() {
   }
 
   return (
-    <>
+    <main>
       <section>
         <ProductInfo title={data.title} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} />
         <button onClick={purchaseHandler}>Purchase me!</button>
@@ -47,7 +44,7 @@ function ProductPage() {
             return <ProductReviews key={review.id} rating={review.rating} username={review.username} description={review.description} />;
           })}
       </section>
-    </>
+    </main>
   );
 }
 
