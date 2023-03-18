@@ -1,15 +1,11 @@
-import CartSlice, { addToCart } from "../store/CartSlice";
-import { Link, useParams } from "react-router-dom";
-import useApi, { ApiResponse } from "../hooks/useApi";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-
 import { Product } from "../components/Types";
 import ProductInfo from "../components/ProductInfo/Index";
 import ProductReviews from "../components/ProductReviews/Index";
-import { RootState } from "../store/store";
-import { has } from "immer/dist/internal";
-import { useMediaQuery } from "@react-hook/media-query";
+import { addToCart } from "../store/CartSlice";
+import styles from "./ProductPage.module.css";
+import useApi from "../hooks/useApi";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 
 function ProductPage() {
   const { productID } = useParams<{ productID: string }>();
@@ -35,11 +31,12 @@ function ProductPage() {
 
   return (
     <main>
-      <section>
-        <ProductInfo title={data.title} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} />
+      <section className={styles.productInfo}>
+        <ProductInfo title={data.title} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} price={data.price} />
         <button onClick={purchaseHandler}>Purchase me!</button>
       </section>
-      <section>
+      <section className={styles.reviewsContainer}>
+        <h3 className={styles.reviewsHeading}>User Reviews</h3>
         {reviews.length > 0 &&
           reviews.map((review) => {
             return <ProductReviews key={review.id} rating={review.rating} username={review.username} description={review.description} />;

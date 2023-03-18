@@ -1,0 +1,28 @@
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.onSale {
+  position: absolute;
+  background-color: #f3f4f1;
+  padding: 1rem;
+  margin: 0;
+  border-top-left-radius: 6px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.245);
+}
+
+img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  margin: 0;
+}
+
+.salesPrice {
+  font-size: 1.2rem;
+  margin: 0;
+}

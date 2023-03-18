@@ -1,0 +1,15 @@
+main {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.reviewsContainer {
+  margin-top: 3rem;
+}
+
+.reviewsHeading {
+  border-bottom: 0.2px solid rgb(161, 161, 161);
+}
