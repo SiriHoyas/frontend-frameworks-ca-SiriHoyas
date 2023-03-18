@@ -1,4 +1,4 @@
-import { Product } from "../components/Types";
+import { Product } from "../components/types";
 import ProductCard from "../components/ProductCard/ProductCard";
 import SearchBar from "../components/SearchBar/Index";
 import styles from "./HomePage.module.css";

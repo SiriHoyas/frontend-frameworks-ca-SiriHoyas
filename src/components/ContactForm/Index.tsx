@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import Button from "../UI/Button/Index";
-import { Inputs } from "../Types";
+import { Inputs } from "../types";
 import { TextField } from "@mui/material";
 import styles from "./ContactForm.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";

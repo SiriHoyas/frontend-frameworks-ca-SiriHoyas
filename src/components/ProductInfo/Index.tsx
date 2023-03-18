@@ -1,9 +1,8 @@
-import { Product } from "../Types";
+import { Product } from "../types";
 import styles from "./ProductInfo.module.css";
 
 function ProductInfo({ title, imageUrl, discountedPrice, price }: Product) {
   let priceDifference = ((discountedPrice - price) / price) * 100;
-  console.log(priceDifference);
 
   if (priceDifference < 0) {
     return (

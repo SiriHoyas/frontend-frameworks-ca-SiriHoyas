@@ -1,4 +1,4 @@
-import { Review } from "../Types";
+import { Review } from "../types";
 import styles from "./ProductReviews.module.css";
 
 function ProductReviews({ rating, username, description }: Review) {

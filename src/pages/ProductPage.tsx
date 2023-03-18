@@ -1,4 +1,4 @@
-import { Product } from "../components/Types";
+import { Product } from "../components/types";
 import ProductInfo from "../components/ProductInfo/Index";
 import ProductReviews from "../components/ProductReviews/Index";
 import { addToCart } from "../store/CartSlice";
