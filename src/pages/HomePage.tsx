@@ -1,19 +1,26 @@
 import { Product } from "../components/types";
 import ProductCard from "../components/ProductCard/ProductCard";
-import SearchBar from "../components/SearchBar/Index";
+import { PuffLoader } from "react-spinners";
 import styles from "./HomePage.module.css";
 import useApi from "../hooks/useApi";
-import { useMediaQuery } from "@react-hook/media-query";
 
 function HomePage() {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");
 
-  if (!data) {
-    return isLoading;
+  if (isLoading) {
+    return (
+      <main className={styles.homepageMain}>
+        <PuffLoader color="#323232" />
+      </main>
+    );
   }
 
-  if (!Array.isArray(data)) {
-    return isError;
+  if (!Array.isArray(data) || isError) {
+    return (
+      <main className={styles.homepageMain}>
+        <p>Error</p>
+      </main>
+    );
   }
 
   return (

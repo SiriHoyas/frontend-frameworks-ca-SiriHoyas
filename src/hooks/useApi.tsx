@@ -16,10 +16,13 @@ function useApi<T>(url: string) {
     async function getData() {
       try {
         setIsLoading(true);
-        setIsError(false);
+
         const response = await fetch(url);
-        const json = await response.json();
-        setData(json);
+        if (response.ok) {
+          const json = await response.json();
+          setData(json);
+          setIsError(false);
+        }
       } catch (error) {
         console.log(error);
       } finally {
