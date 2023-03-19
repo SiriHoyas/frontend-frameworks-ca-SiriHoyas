@@ -1,6 +1,7 @@
 import { Product } from "../components/types";
-import ProductCard from "../components/ProductCard/ProductCard";
+import ProductCard from "../components/ProductCard/Index";
 import { PuffLoader } from "react-spinners";
+import SearchBar from "../components/SearchBar/Index";
 import styles from "./HomePage.module.css";
 import useApi from "../hooks/useApi";
 
@@ -16,15 +17,15 @@ function HomePage() {
   }
 
   if (!Array.isArray(data) || isError) {
-    return (
-      <main className={styles.homepageMain}>
-        <p>Error</p>
-      </main>
-    );
+    return <main className={styles.homepageMain}>Error</main>;
   }
 
   return (
     <main className={styles.homepageMain}>
+      <section className={styles.searchContainer}>
+        <input type="text" className={styles.searchBar} placeholder="Search" />
+      </section>
+      <h1>Products</h1>
       <section className={styles.productsContainer}>
         {data.map((product: Product) => {
           return <ProductCard imageUrl={product.imageUrl} title={product.title} discountedPrice={product.discountedPrice} key={product.id} id={product.id} />;

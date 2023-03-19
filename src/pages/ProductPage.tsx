@@ -15,6 +15,7 @@ function ProductPage() {
   if (!data) return <p>Loading...</p>;
 
   const reviews = data.reviews || [];
+  console.log(data.description);
 
   function purchaseHandler() {
     let price = data?.discountedPrice;
@@ -32,7 +33,7 @@ function ProductPage() {
   return (
     <main>
       <section className={styles.productInfo}>
-        <ProductInfo title={data.title} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} price={data.price} />
+        <ProductInfo title={data.title} description={data.description} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} price={data.price} />
         <button onClick={purchaseHandler}>Purchase me!</button>
       </section>
       <section className={styles.reviewsContainer}>

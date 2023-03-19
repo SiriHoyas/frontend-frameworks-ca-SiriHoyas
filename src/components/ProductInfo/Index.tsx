@@ -1,8 +1,8 @@
 import { Product } from "../types";
 import styles from "./ProductInfo.module.css";
 
-function ProductInfo({ title, imageUrl, discountedPrice, price }: Product) {
-  let priceDifference = ((discountedPrice - price) / price) * 100;
+function ProductInfo({ title, imageUrl, discountedPrice, price, description }: Product) {
+  let priceDifference = ((discountedPrice - price!) / price!) * 100;
 
   if (priceDifference < 0) {
     return (
@@ -13,6 +13,7 @@ function ProductInfo({ title, imageUrl, discountedPrice, price }: Product) {
         </div>
         <div>
           <h1>{title}</h1>
+          <p className={styles.productDescription}>{description}</p>
           <div className={styles.priceContainer}>
             <p className={styles.originalPrice}>$ {price}</p>
             <p className={styles.salesPrice}>$ {discountedPrice}</p>
@@ -29,6 +30,7 @@ function ProductInfo({ title, imageUrl, discountedPrice, price }: Product) {
       </div>
       <div>
         <h1>{title}</h1>
+        <p className={styles.productDescription}>{description}</p>
         <p>$ {discountedPrice}</p>
       </div>
     </article>
