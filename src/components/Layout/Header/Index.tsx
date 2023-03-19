@@ -18,10 +18,6 @@ function Header() {
 
   const [navState, setNavState] = useState("initialState");
 
-  function searchOpen() {
-    setNavState("searchOpen");
-  }
-
   function menuOpen() {
     setNavState("menuOpen");
   }
@@ -34,7 +30,9 @@ function Header() {
     return (
       <header className={styles.navbar}>
         <section className={styles.logoContainer}>
-          <Logo className={styles.logo} />
+          <Link to={"/"}>
+            <Logo className={styles.logo} />
+          </Link>
         </section>
         <nav className={styles.navLinksContainer}>
           <NavLink to={"/"} className={styles.navLink}>
@@ -45,8 +43,6 @@ function Header() {
           </NavLink>
         </nav>
         <section className={styles.iconsContainer}>
-          <AiOutlineSearch className={styles.navbarIcon} />
-          {/* <SearchBar /> */}
           <Link to={"checkout"}>
             <div className={styles.cartContainer}>
               <BsBag className={styles.navbarIcon} />
@@ -58,14 +54,6 @@ function Header() {
     );
   }
 
-  if (navState === "searchOpen") {
-    return (
-      <header className={`${styles.navbar} ${styles.searchOpen}`}>
-        {/* <SearchBar /> */}
-        <AiOutlineCloseCircle className={styles.searchOpenIcon} onClick={closeMenuOptions} />
-      </header>
-    );
-  }
   if (navState === "menuOpen") {
     return (
       <header className={`${styles.navbar} ${styles.menuOpen}`}>
@@ -90,7 +78,6 @@ function Header() {
         </Link>
       </section>
       <section className={styles.iconsContainer}>
-        <AiOutlineSearch className={styles.navbarIcon} onClick={searchOpen} />
         <Link to={"checkout"}>
           <div className={styles.cartContainer}>
             <BsBag className={styles.navbarIcon} />
