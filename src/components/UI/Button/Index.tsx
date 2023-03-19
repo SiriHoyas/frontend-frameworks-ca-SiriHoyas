@@ -5,17 +5,14 @@ import styles from "./Button.module.css";
 type Props = {
   className: string;
   label: string;
-  path: string;
-  onClick: () => void;
+  onClick?: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-function Button({ className, type, label, path, onClick }: Props) {
+function Button({ className, type, label, onClick }: Props) {
   return (
-    <Link to={path}>
-      <button className={`${styles.btn} ${styles[className]} `} type={type} onClick={onClick}>
-        {label}
-      </button>
-    </Link>
+    <button className={`${styles.btn} ${styles[className]} `} type={type} onClick={onClick}>
+      {label}
+    </button>
   );
 }
 

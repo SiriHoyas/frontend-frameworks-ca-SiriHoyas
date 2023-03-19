@@ -14,7 +14,9 @@ function ProductCard({ imageUrl, title, discountedPrice, id }: Product) {
         <p className={styles.productPrice}>{discountedPrice} kr</p>
       </div>
       <div className={styles.btnContainer}>
-        <Link to={`products/${id}`}>Show more</Link>
+        <Link to={`products/${id}`}>
+          <Button label="Show more" className={"primary"} type="button" />
+        </Link>
       </div>
     </article>
   );
