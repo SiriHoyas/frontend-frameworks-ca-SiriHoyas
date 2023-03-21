@@ -32,10 +32,13 @@ function ProductPage() {
     let price = data?.discountedPrice;
     let itemName = data?.title;
     let id = data?.id;
+    let imageUrl = data?.imageUrl;
+
     let itemObject = {
       itemName,
       price,
       id,
+      imageUrl,
     };
 
     dispatch(addToCart(itemObject));
@@ -46,7 +49,7 @@ function ProductPage() {
   return (
     <main>
       <Link to="/">
-        <Button label="Back" className={"primary"} type="button" onClick={purchaseHandler} />
+        <Button label="Back" className={"primary"} type="button" />
       </Link>
       <section className={styles.productInfo}>
         <ProductInfo title={data.title} description={data.description} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} price={data.price} />
