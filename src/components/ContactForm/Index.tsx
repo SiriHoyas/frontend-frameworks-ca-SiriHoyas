@@ -64,7 +64,7 @@ function ContactForm() {
         <label htmlFor="body">Message:</label>
         <textarea {...register("body")} />
         <p className={styles.formError}>{errors.body?.message}</p>
-        <Button type="submit" className={"primary"} label="Send" onSubmit={submitForm} />
+        <Button type="submit" className={"primary"} label="Send" />
       </form>
     </section>
   );
