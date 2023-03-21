@@ -28,6 +28,10 @@ textarea {
   resize: none;
 }
 
+label {
+  font-size: 0.8rem;
+}
+
 .formError {
   font-size: 0.7rem;
   color: red;

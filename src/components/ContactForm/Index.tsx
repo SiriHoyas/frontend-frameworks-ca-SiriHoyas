@@ -52,12 +52,16 @@ function ContactForm() {
     <section className={styles.contactFormContainer}>
       <h1 className={styles.title}>Contact us</h1>
       <form className={styles.contactForm} onSubmit={handleSubmit(submitForm)}>
+        <label htmlFor="fullName">Name:</label>
         <input type="text" placeholder="You name" {...register("fullName")} />
         <p className={styles.formError}>{errors.fullName?.message}</p>
+        <label htmlFor="subject">Subject:</label>
         <input type="text" placeholder="subject" {...register("subject")} />
         <p className={styles.formError}>{errors.subject?.message}</p>
+        <label htmlFor="email">Email:</label>
         <input type="email" placeholder="email" {...register("email")} />
         <p className={styles.formError}>{errors.email?.message}</p>
+        <label htmlFor="body">Message:</label>
         <textarea {...register("body")} />
         <p className={styles.formError}>{errors.body?.message}</p>
         <Button type="submit" className={"primary"} label="Send" onSubmit={submitForm} />
