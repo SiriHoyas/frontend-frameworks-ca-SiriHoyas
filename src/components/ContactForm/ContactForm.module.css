@@ -38,3 +38,9 @@ textarea {
 .sentSuccessContainer {
   text-align: center;
 }
+
+@media only screen and (min-width: 1024px) {
+  .contactFormContainer {
+    width: 50%;
+  }
+}
