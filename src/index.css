@@ -18,6 +18,5 @@ body {
 
 main {
   flex-grow: 1;
-  margin-top: 4rem;
   width: 90%;
 }

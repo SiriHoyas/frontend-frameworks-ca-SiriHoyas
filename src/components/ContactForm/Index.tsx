@@ -4,8 +4,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import Button from "../UI/Button/Index";
 import { Inputs } from "../types";
-import { TextField } from "@mui/material";
+import { Link } from "react-router-dom";
 import styles from "./ContactForm.module.css";
+import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const schema = yup.object().shape({
@@ -20,7 +21,8 @@ const schema = yup.object().shape({
 });
 
 function ContactForm() {
-  let isValidated = false;
+  const [isValidated, setIsValidated] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -31,11 +33,24 @@ function ContactForm() {
 
   const submitForm: SubmitHandler<Inputs> = (form) => {
     console.log(form);
-    isValidated = true;
+    setIsValidated(true);
   };
+
+  if (isValidated) {
+    return (
+      <section className={styles.sentSuccessContainer}>
+        <h1 className={styles.title}>Thanks!</h1>
+        <p>We have recieved your message.</p>
+        <Link to={"/"}>
+          <Button label="Home" className={"primary"} type="button" />
+        </Link>
+      </section>
+    );
+  }
 
   return (
     <section className={styles.contactFormContainer}>
+      <h1 className={styles.title}>Contact us</h1>
       <form className={styles.contactForm} onSubmit={handleSubmit(submitForm)}>
         <input type="text" placeholder="You name" {...register("fullName")} />
         <p className={styles.formError}>{errors.fullName?.message}</p>
@@ -45,7 +60,7 @@ function ContactForm() {
         <p className={styles.formError}>{errors.email?.message}</p>
         <textarea {...register("body")} />
         <p className={styles.formError}>{errors.body?.message}</p>
-        <input type="submit" />
+        <Button type="submit" className={"primary"} label="Send" onSubmit={submitForm} />
       </form>
     </section>
   );
