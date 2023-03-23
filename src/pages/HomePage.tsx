@@ -13,7 +13,7 @@ function HomePage() {
   if (isLoading) {
     return (
       <main className={styles.homepageMain}>
-        <PuffLoader color="#323232" />
+        <PuffLoader color="#323232" className={styles.loader} />
       </main>
     );
   }

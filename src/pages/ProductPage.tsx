@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 
 import Button from "./../components/UI/Button/Index";
+import ErrorMessage from "../components/ErrorMessage";
 import { Product } from "../components/types";
 import ProductInfo from "../components/ProductInfo/Index";
 import ProductReviews from "../components/ProductReviews/Index";
@@ -25,7 +26,11 @@ function ProductPage() {
   }
 
   if (!(typeof data === "object") || !data || isError) {
-    return <main className={styles.homepageMain}>Error</main>;
+    return (
+      <main className={styles.homepageMain}>
+        <ErrorMessage />
+      </main>
+    );
   }
 
   function purchaseHandler() {
