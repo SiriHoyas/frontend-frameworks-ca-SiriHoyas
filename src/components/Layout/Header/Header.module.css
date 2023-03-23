@@ -66,6 +66,10 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
   .navLinksContainer {
     display: flex;
     width: 100%;

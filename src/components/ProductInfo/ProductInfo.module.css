@@ -1,6 +1,10 @@
+main {
+  width: 90%;
+}
 .productInfo {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .onSale {
@@ -29,4 +33,21 @@ img {
 
 .productDescription {
   font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .productInfo {
+    flex-direction: row;
+    /* justify-content: space-between; */
+  }
+
+  .imageContainer {
+    width: 40%;
+    margin-right: 5rem;
+  }
+
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
 }
