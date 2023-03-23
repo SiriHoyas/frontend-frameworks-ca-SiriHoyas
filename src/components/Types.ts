@@ -28,3 +28,10 @@ export type cartState = {
   total: number;
   isLoading: boolean;
 };
+
+export interface ApiResponse {
+  title: string;
+  imageUrl: string;
+  discountedPrice: number;
+  id: string;
+}
