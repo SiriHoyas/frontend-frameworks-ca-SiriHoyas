@@ -58,7 +58,7 @@ function ProductPage() {
       </Link>
       <section className={styles.productInfo}>
         <ProductInfo title={data.title} description={data.description} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} price={data.price} />
-        <Button label="Add to cart" className={"primary"} type="button" onClick={purchaseHandler} />
+        <Button label="Add to cart" className={"secondary"} type="button" onClick={purchaseHandler} />
       </section>
       <section className={styles.reviewsContainer}>
         <h3 className={styles.reviewsHeading}>User Reviews</h3>

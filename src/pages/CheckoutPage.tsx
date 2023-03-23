@@ -24,7 +24,8 @@ function Checkout() {
     return (
       <main>
         {cartItems.map((product: Product) => {
-          return <CartItem key={product.id} title={product.title} price={product.price} imageUrl={product.imageUrl} />;
+          console.log(product);
+          return <CartItem key={product.id} title={product.itemName} price={product.price} imageUrl={product.imageUrl} />;
         })}
 
         <p>Total: {total}</p>
@@ -36,10 +37,10 @@ function Checkout() {
   }
 
   return (
-    <main className={styles.checkoutSuccessMain}>
+    <main className={styles.checkoutMain}>
       <h1>Your cart is empty</h1>
       <Link to="/">
-        <Button label="Find products" className={"primary"} type="button" />
+        <Button label="Find products" className={"secondary"} type="button" />
       </Link>
     </main>
   );
