@@ -1,5 +1,6 @@
 import { ApiResponse, Product } from "../components/types";
 
+import ErrorMessage from "../components/ErrorMessage";
 import ProductCard from "../components/ProductCard/Index";
 import { PuffLoader } from "react-spinners";
 import SearchBar from "../components/SearchBar/Index";
@@ -18,7 +19,11 @@ function HomePage() {
   }
 
   if (!Array.isArray(data) || isError) {
-    return <main className={styles.homepageMain}>Error</main>;
+    return (
+      <main>
+        <ErrorMessage />
+      </main>
+    );
   }
 
   return (

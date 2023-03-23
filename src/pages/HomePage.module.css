@@ -1,10 +1,3 @@
-.homepageMain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
 .searchContainer {
   background-color: darkgrey;
   width: 100%;
