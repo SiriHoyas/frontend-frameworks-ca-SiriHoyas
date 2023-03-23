@@ -36,8 +36,11 @@ function Checkout() {
   }
 
   return (
-    <main>
-      <h2>Nothing here</h2>
+    <main className={styles.checkoutSuccessMain}>
+      <h1>Your cart is empty</h1>
+      <Link to="/">
+        <Button label="Find products" className={"primary"} type="button" />
+      </Link>
     </main>
   );
 }
