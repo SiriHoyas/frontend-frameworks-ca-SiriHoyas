@@ -1,14 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 
-import Button from "./../components/UI/Button/Index";
-import ErrorMessage from "../components/ErrorMessage";
-import { Product } from "../components/types";
-import ProductInfo from "../components/ProductInfo/Index";
-import ProductReviews from "../components/ProductReviews/Index";
+import Button from "../../components/UI/Button";
+import ErrorMessage from "../../components/ErrorMessage";
+import { Product } from "../../components/types";
+import ProductInfo from "../../components/ProductInfo/Index";
+import ProductReviews from "../../components/ProductReviews/Index";
 import { PuffLoader } from "react-spinners";
-import { addToCart } from "../store/CartSlice";
+import { addToCart } from "../../store/CartSlice";
 import styles from "./ProductPage.module.css";
-import useApi from "../hooks/useApi";
+import useApi from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 
 function ProductPage() {

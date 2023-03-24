@@ -1,11 +1,10 @@
-import { ApiResponse, Product } from "../components/types";
+import { ApiResponse, Product } from "../../components/types";
 
-import ErrorMessage from "../components/ErrorMessage";
-import ProductCard from "../components/ProductCard/Index";
+import ErrorMessage from "../../components/ErrorMessage";
+import ProductCard from "../../components/ProductCard/Index";
 import { PuffLoader } from "react-spinners";
-import SearchBar from "../components/SearchBar/Index";
 import styles from "./HomePage.module.css";
-import useApi from "../hooks/useApi";
+import useApi from "../../hooks/useApi";
 
 function HomePage() {
   const { data, isLoading, isError } = useApi<ApiResponse>("https://api.noroff.dev/api/v1/online-shop");

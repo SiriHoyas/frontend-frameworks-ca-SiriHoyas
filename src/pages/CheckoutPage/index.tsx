@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import Button from "./../components/UI/Button/Index";
-import CartItem from "../components/CartItem/Index";
+import Button from "../../components/UI/Button";
+import CartItem from "../../components/CartItem/Index";
 import { Link } from "react-router-dom";
-import { Product } from "../components/types";
-import { RootState } from "../store/store";
+import { Product } from "../../components/types";
+import { RootState } from "../../store/store";
 import styles from "./CheckoutPage.module.css";
 
 function Checkout() {
@@ -28,7 +28,7 @@ function Checkout() {
           return <CartItem key={product.id} title={product.itemName} price={product.price} imageUrl={product.imageUrl} />;
         })}
 
-        <p>Total: {total}</p>
+        <p>Total: {(Math.round(total * 100) / 100).toFixed(2)}</p>
         <Link to={"/checkoutSuccess"} onClick={clearCart}>
           <Button label="Checkout" className={"primary"} type="button" />
         </Link>

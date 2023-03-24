@@ -1,4 +1,4 @@
-import Button from "../UI/Button/Index";
+import Button from "../UI/Button";
 import { Link } from "react-router-dom";
 import { Product } from "../types";
 import styles from "./ProductCard.module.css";
