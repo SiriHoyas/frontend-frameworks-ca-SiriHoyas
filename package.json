@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@hookform/resolvers": "^2.9.11",
+    "@mui/material": "^5.11.15",
     "@react-hook/media-query": "^1.1.1",
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^1.9.3",

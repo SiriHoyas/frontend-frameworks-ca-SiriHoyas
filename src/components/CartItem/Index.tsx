@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Product } from "../types";
 import styles from "./CartItem.module.css";
 

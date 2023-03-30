@@ -9,6 +9,7 @@ import styles from "./CheckoutPage.module.css";
 
 function Checkout() {
   const { cartItems, total } = useSelector((store: RootState) => {
+    console.log(store.cart);
     return store.cart;
   });
 

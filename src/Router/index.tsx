@@ -6,7 +6,7 @@ import Contact from "../pages/ContactPage";
 import Error from "../pages/ErrorPage";
 import HomePage from "../pages/HomePage";
 import Layout from "../components/Layout/Layout";
-import ProductPage from "../pages/ProductPage/ProductPage";
+import ProductPage from "../pages/ProductPage";
 
 function Router() {
   return (

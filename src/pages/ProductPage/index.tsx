@@ -38,12 +38,14 @@ function ProductPage() {
     let itemName = data?.title;
     let id = data?.id;
     let imageUrl = data?.imageUrl;
+    let quantity = 1;
 
     let itemObject = {
       itemName,
       price,
       id,
       imageUrl,
+      quantity,
     };
 
     dispatch(addToCart(itemObject));

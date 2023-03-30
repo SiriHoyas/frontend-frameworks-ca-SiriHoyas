@@ -3,6 +3,7 @@ import { ApiResponse, Product } from "../../components/types";
 import ErrorMessage from "../../components/ErrorMessage";
 import ProductCard from "../../components/ProductCard/Index";
 import { PuffLoader } from "react-spinners";
+import SearchBar from "../../components/SearchBar";
 import styles from "./HomePage.module.css";
 import useApi from "../../hooks/useApi";
 
@@ -28,7 +29,7 @@ function HomePage() {
   return (
     <main className={styles.homepageMain}>
       <section className={styles.searchContainer}>
-        <input type="text" className={styles.searchBar} placeholder="Search" />
+        <SearchBar />
       </section>
       <h1>Products</h1>
       <section className={styles.productsContainer}>

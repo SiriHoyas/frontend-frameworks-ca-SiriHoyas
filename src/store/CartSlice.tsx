@@ -1,5 +1,6 @@
+import { createSlice, current } from "@reduxjs/toolkit";
+
 import { cartState } from "../components/types";
-import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: cartState = {
   cartItems: [],
@@ -13,6 +14,15 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state: cartState, action) => {
+      const duplicate = state.cartItems.find((product) => {
+        console.log(current(state));
+      });
+
+      if (duplicate) {
+        console.log("more than one item");
+      }
+
+      action.payload.quantity = 4;
       state.cartItems = [...state.cartItems, action.payload];
       state.total = state.total + action.payload.price;
       state.itemCount = state.cartItems.length;
