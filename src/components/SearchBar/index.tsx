@@ -1,20 +1,15 @@
-import ReactSearchBox from "react-search-box";
+import { Product } from "../types";
 import SearchResults from "./SearchResults";
 import styles from "./SearchBar.module.css";
-import useApi from "../../hooks/useApi";
 import { useState } from "react";
 
-function SearchBar({ data }) {
+function SearchBar({ data }: { data: Array<Product> }) {
   const [value, setValue] = useState("");
-  const [searchData, setSearchData] = useState();
-  console.log(data);
 
   const filteredData = data.filter((item) => {
     const searchValue = value.toLowerCase();
     return item.title.toLowerCase().includes(searchValue);
   });
-
-  console.log(filteredData);
 
   return (
     <div className={styles.searchBarContainer}>
@@ -22,7 +17,7 @@ function SearchBar({ data }) {
         type="text"
         placeholder="Search..."
         value={value}
-        // onBlur={() => setValue("")}
+        onBlur={() => setValue("")}
         onChange={(e) => {
           setValue(e.target.value);
         }}
