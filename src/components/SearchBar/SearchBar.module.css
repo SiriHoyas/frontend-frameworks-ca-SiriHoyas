@@ -1,0 +1,9 @@
+.searchBarContainer {
+  width: 90%;
+  position: relative;
+}
+
+.searchBarContainer input {
+  width: 100%;
+  padding: 1rem;
+}

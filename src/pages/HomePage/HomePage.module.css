@@ -1,5 +1,9 @@
 .homepageMain {
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 4rem;
 }
 
 .searchContainer {

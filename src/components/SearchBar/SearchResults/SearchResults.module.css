@@ -1,0 +1,21 @@
+.searchResultsContainer {
+  width: 100%;
+}
+
+.searchResult {
+  padding: 0.8rem;
+}
+
+.resultList {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 3px #585858;
+  border-radius: 6px;
+  margin-top: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}

@@ -54,7 +54,7 @@ function ProductPage() {
   const reviews = data.reviews || [];
 
   return (
-    <main>
+    <main className={styles.productMain}>
       <Link to="/">
         <Button label="Back" className={"primary"} type="button" />
       </Link>
