@@ -2,14 +2,14 @@ import { Product } from "../types";
 import styles from "./ProductInfo.module.css";
 
 function ProductInfo({ title, imageUrl, discountedPrice, price, description }: Product) {
-  let priceDifference = ((discountedPrice - price!) / price!) * 100;
+  let priceDifference = ((discountedPrice - price) / price) * 100;
 
   if (priceDifference < 0) {
     return (
       <article className={styles.productInfo}>
         <div className={styles.imageContainer}>
           <p className={styles.onSale}>{Math.ceil(priceDifference)}%</p>
-          <img src={imageUrl} />
+          <img src={imageUrl} alt={title} />
         </div>
         <div>
           <h1>{title}</h1>
@@ -26,7 +26,7 @@ function ProductInfo({ title, imageUrl, discountedPrice, price, description }: P
   return (
     <article className={styles.productInfo}>
       <div className={styles.imageContainer}>
-        <img src={imageUrl} />
+        <img src={imageUrl} alt={title} />
       </div>
       <div>
         <h1>{title}</h1>

@@ -1,7 +1,8 @@
-import { Review } from "../types";
+import { ProductReviewsProps, Review } from "../types";
+
 import styles from "./ProductReviews.module.css";
 
-function ProductReviews({ rating, username, description }: Review) {
+function ProductReviews({ rating, username, description }: ProductReviewsProps) {
   return (
     <article>
       <h4>{username}</h4>

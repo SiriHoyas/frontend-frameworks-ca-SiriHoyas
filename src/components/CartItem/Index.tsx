@@ -1,14 +1,14 @@
-import { Product } from "../types";
+import { CartItemProps } from "../types";
 import styles from "./CartItem.module.css";
 
-function CartItem({ title, price, imageUrl }: Product) {
+function CartItem({ itemName: itemName, price, imageUrl }: CartItemProps) {
   return (
     <article className={styles.cartItemContainer}>
       <div>
-        <img src={imageUrl} alt={title} className={styles.productImg} />
+        <img src={imageUrl} alt={itemName} className={styles.productImg} />
       </div>
       <div className={styles.cartItemInfo}>
-        <h2>{title}</h2>
+        <h2>{itemName}</h2>
         <p>$ {price}</p>
       </div>
     </article>

@@ -1,6 +1,7 @@
+import { SearchResultsType } from "../../types";
 import styles from "./SearchResults.module.css";
 
-function SearchResults({ value, filteredData }) {
+function SearchResults({ value, filteredData }: SearchResultsType) {
   return (
     <section className={styles.searchResultsContainer}>
       <div className={styles.resultList}>

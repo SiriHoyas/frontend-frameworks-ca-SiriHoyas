@@ -1,36 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import Button from "../../components/UI/Button";
-import CartItem from "../../components/CartItem/Index";
+import CartItem from "../../components/CartItem";
+import { CartItemProps } from "../../components/types";
 import { Link } from "react-router-dom";
-import { Product } from "../../components/types";
 import { RootState } from "../../store/store";
+import { clearCart } from "../../store/CartSlice";
 import styles from "./CheckoutPage.module.css";
 
 function Checkout() {
   const { cartItems, total } = useSelector((store: RootState) => {
-    console.log(store.cart);
     return store.cart;
   });
 
   const dispatch = useDispatch();
 
-  function clearCart() {
-    dispatch(clearCart);
-  }
-
-  console.log(cartItems);
-
   if (cartItems.length > 0) {
     return (
       <main>
-        {cartItems.map((product: Product) => {
-          console.log(product);
-          return <CartItem key={product.id} title={product.itemName} price={product.price} imageUrl={product.imageUrl} />;
+        {cartItems.map((product: CartItemProps) => {
+          return <CartItem key={product.id} itemName={product.itemName} price={product.price} imageUrl={product.imageUrl} />;
         })}
 
         <p>Total: {(Math.round(total * 100) / 100).toFixed(2)}</p>
-        <Link to={"/checkoutSuccess"} onClick={clearCart}>
+        <Link
+          to={"/checkoutSuccess"}
+          onClick={() => {
+            dispatch(clearCart());
+          }}
+        >
           <Button label="Checkout" className={"primary"} type="button" />
         </Link>
       </main>

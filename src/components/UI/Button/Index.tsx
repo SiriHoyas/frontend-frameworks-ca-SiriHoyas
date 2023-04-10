@@ -1,14 +1,9 @@
 import { ButtonHTMLAttributes } from "react";
+import { ButtonType } from "../../types";
 import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
-type Props = {
-  className: string;
-  label: string;
-  onClick?: () => void;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-function Button({ className, type, label, onClick }: Props) {
+function Button({ className, type, label, onClick }: ButtonType) {
   return (
     <button className={`${styles.btn} ${styles[className]} `} type={type} onClick={onClick}>
       {label}

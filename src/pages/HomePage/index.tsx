@@ -1,4 +1,4 @@
-import { ApiResponse, Product } from "../../components/types";
+import { ApiResponse, Product, ProductCardProps } from "../../components/types";
 
 import ErrorMessage from "../../components/ErrorMessage";
 import ProductCard from "../../components/ProductCard";
@@ -33,7 +33,7 @@ function HomePage() {
       </section>
       <h1>Products</h1>
       <section className={styles.productsContainer}>
-        {data.map((product: Product) => {
+        {data.map((product: ProductCardProps) => {
           return <ProductCard imageUrl={product.imageUrl} title={product.title} discountedPrice={product.discountedPrice} key={product.id} id={product.id} />;
         })}
       </section>

@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import Button from "../../components/UI/Button";
 import ErrorMessage from "../../components/ErrorMessage";
 import { Product } from "../../components/types";
-import ProductInfo from "../../components/ProductInfo/Index";
-import ProductReviews from "../../components/ProductReviews/Index";
+import ProductInfo from "../../components/ProductInfo";
+import ProductReviews from "../../components/ProductReviews";
 import { PuffLoader } from "react-spinners";
 import { addToCart } from "../../store/CartSlice";
 import styles from "./ProductPage.module.css";
@@ -27,7 +27,7 @@ function ProductPage() {
 
   if (!(typeof data === "object") || !data || isError) {
     return (
-      <main className={styles.homepageMain}>
+      <main className={styles.productMain}>
         <ErrorMessage />
       </main>
     );
