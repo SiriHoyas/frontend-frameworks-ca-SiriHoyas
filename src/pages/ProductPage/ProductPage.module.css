@@ -1,10 +1,14 @@
 .productMain {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 0 auto;
   margin-top: 3rem;
+}
+
+.backButtonContainer {
+  display: flex;
+  align-self: flex-start;
 }
 
 .productInfo {

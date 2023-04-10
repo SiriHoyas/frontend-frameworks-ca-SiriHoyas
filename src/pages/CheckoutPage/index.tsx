@@ -17,7 +17,7 @@ function Checkout() {
 
   if (cartItems.length > 0) {
     return (
-      <main>
+      <main className={styles.checkoutMain}>
         {cartItems.map((product: CartItemProps) => {
           return <CartItem key={product.id} itemName={product.itemName} price={product.price} imageUrl={product.imageUrl} />;
         })}

@@ -55,9 +55,11 @@ function ProductPage() {
 
   return (
     <main className={styles.productMain}>
-      <Link to="/">
-        <Button label="Back" className={"primary"} type="button" />
-      </Link>
+      <div className={styles.backButtonContainer}>
+        <Link to="/">
+          <Button label="Back" className={"primary"} type="button" />
+        </Link>
+      </div>
       <section className={styles.productInfo}>
         <ProductInfo title={data.title} description={data.description} imageUrl={data.imageUrl} discountedPrice={data.discountedPrice} id={data.id} price={data.price} />
         <Button label="Add to cart" className={"secondary"} type="button" onClick={purchaseHandler} />

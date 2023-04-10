@@ -1,1 +1,13 @@
+.contactMain {
+  display: flex;
 
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+  .contactMain {
+    width: 50%;
+  }
+}

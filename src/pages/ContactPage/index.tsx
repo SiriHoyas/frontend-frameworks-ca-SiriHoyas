@@ -3,7 +3,7 @@ import styles from "./ContactPage.module.css";
 
 function Contact() {
   return (
-    <main className={styles.main}>
+    <main className={styles.contactMain}>
       <ContactForm />
     </main>
   );

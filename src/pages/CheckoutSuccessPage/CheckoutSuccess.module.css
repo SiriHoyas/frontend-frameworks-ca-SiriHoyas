@@ -1,0 +1,11 @@
+.checkoutSuccessMain {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .checkoutSuccessMain {
+    width: 50%;
+  }
+}
