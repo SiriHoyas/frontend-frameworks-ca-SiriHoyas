@@ -1,5 +1,5 @@
 import { Product } from "../types";
-import SearchResults from "./SearchResults";
+import SearchResults from "./SearchResults/index";
 import styles from "./SearchBar.module.css";
 import { useState } from "react";
 

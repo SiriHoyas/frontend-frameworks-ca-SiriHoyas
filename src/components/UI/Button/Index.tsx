@@ -1,6 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
 import { ButtonType } from "../../types";
-import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
 function Button({ className, type, label, onClick }: ButtonType) {

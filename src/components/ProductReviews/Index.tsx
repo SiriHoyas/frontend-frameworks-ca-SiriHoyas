@@ -1,5 +1,4 @@
-import { ProductReviewsProps, Review } from "../types";
-
+import { ProductReviewsProps } from "../types";
 import styles from "./ProductReviews.module.css";
 
 function ProductReviews({ rating, username, description }: ProductReviewsProps) {
