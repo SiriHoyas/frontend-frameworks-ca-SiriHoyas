@@ -1,9 +1,9 @@
 import { ApiResponse, Product, ProductCardProps } from "../../components/types";
 
-import ErrorMessage from "../../components/ErrorMessage";
-import ProductCard from "../../components/ProductCard";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import { PuffLoader } from "react-spinners";
-import SearchBar from "../../components/SearchBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import styles from "./HomePage.module.css";
 import useApi from "../../hooks/useApi";
 
