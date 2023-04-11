@@ -4,6 +4,13 @@
 
 .searchResult {
   padding: 0.8rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.searchResult:hover {
+  background-color: #bcbcbc;
 }
 
 .resultList {

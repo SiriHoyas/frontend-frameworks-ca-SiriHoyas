@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function SearchBar({ data }: { data: Array<Product> }) {
   const [value, setValue] = useState("");
+  const [inFoucs, setInFocus] = useState(false);
 
   const filteredData = data.filter((item) => {
     const searchValue = value.toLowerCase();
@@ -17,12 +18,17 @@ function SearchBar({ data }: { data: Array<Product> }) {
         type="text"
         placeholder="Search..."
         value={value}
-        onBlur={() => setValue("")}
+        onBlur={() =>
+          setTimeout(() => {
+            setInFocus(false);
+          }, 50)
+        }
+        onFocus={() => setInFocus(true)}
         onChange={(e) => {
           setValue(e.target.value);
         }}
       />
-      <SearchResults value={value} filteredData={filteredData} />
+      {value.length > 0 && inFoucs && <SearchResults value={value} filteredData={filteredData} />}
     </div>
   );
 }
