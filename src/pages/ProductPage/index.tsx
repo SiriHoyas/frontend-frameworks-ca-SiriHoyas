@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-import Button from "../../components/UI/Button";
+import Button from "../../components/UI/Button/Button";
 import ErrorMessage from "../../components/ErrorMessage";
 import { Product } from "../../components/types";
 import ProductInfo from "../../components/ProductInfo";

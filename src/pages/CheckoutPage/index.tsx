@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import Button from "../../components/UI/Button";
+import Button from "../../components/UI/Button/Button";
 import CartItem from "../../components/CartItem";
 import { CartItemProps } from "../../components/types";
 import { Link } from "react-router-dom";
