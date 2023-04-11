@@ -15,11 +15,13 @@ function Checkout() {
 
   const dispatch = useDispatch();
 
+  console.log(cartItems);
+
   if (cartItems.length > 0) {
     return (
       <main className={styles.checkoutMain}>
         {cartItems.map((product: CartItemProps) => {
-          return <CartItem key={product.id} itemName={product.itemName} price={product.price} imageUrl={product.imageUrl} />;
+          return <CartItem key={product.id} itemName={product.itemName} price={product.price} imageUrl={product.imageUrl} quantity={product.quantity} />;
         })}
 
         <p>Total: {(Math.round(total * 100) / 100).toFixed(2)}</p>

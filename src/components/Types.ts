@@ -67,4 +67,5 @@ export type CartItemProps = {
   itemName: string;
   price: number;
   imageUrl: string;
+  quantity: number;
 };
