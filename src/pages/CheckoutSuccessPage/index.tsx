@@ -1,4 +1,4 @@
-import Button from "../../components/UI/Button/index";
+import Button from "../../components/UI/Button";
 import { Link } from "react-router-dom";
 import styles from "./CheckoutSuccess.module.css";
 

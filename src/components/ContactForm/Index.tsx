@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import Button from "../UI/Button/index";
+import Button from "../UI/Button";
 import { Inputs } from "../types";
 import { Link } from "react-router-dom";
 import styles from "./ContactForm.module.css";

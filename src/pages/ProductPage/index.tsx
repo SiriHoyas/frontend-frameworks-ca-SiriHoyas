@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 
 import Button from "../../components/UI/Button";
-import ErrorMessage from "../../components/ErrorMessage/index";
+import ErrorMessage from "../../components/ErrorMessage";
 import { Product } from "../../components/types";
-import ProductInfo from "../../components/ProductInfo/index";
-import ProductReviews from "../../components/ProductReviews/index";
+import ProductInfo from "../../components/ProductInfo";
+import ProductReviews from "../../components/ProductReviews";
 import { PuffLoader } from "react-spinners";
 import { addToCart } from "../../store/CartSlice";
 import styles from "./ProductPage.module.css";
