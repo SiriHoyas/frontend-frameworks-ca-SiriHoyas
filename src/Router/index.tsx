@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
-import Checkout from "../pages/CheckoutPage";
-import CheckoutSuccess from "../pages/CheckoutSuccessPage";
-import Contact from "../pages/ContactPage";
-import Error from "../pages/ErrorPage";
-import HomePage from "../pages/HomePage";
+import Checkout from "../pages/CheckoutPage/index";
+import CheckoutSuccess from "../pages/CheckoutSuccessPage/index";
+import Contact from "../pages/ContactPage/index";
+import Error from "../pages/ErrorPage/index";
+import HomePage from "../pages/HomePage/index";
 import Layout from "../components/Layout/Layout";
-import ProductPage from "../pages/ProductPage";
+import ProductPage from "../pages/ProductPage/index";
 
 function Router() {
   return (
